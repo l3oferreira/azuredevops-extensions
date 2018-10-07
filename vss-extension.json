@@ -1,0 +1,36 @@
+﻿{
+  "manifestVersion": 1,
+  "id": "azuredevops-extensions",
+  "name": "Azure Devops Extensions",
+  "version": "1.0.2",
+  "publisher": "l3oferreira",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Custom extensions for build and release purposes.",
+  "categories": [
+    "Build and release"
+  ],
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "files": [
+    {
+      "path": "tasks/xml/transform"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "xml-transform",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "tasks/xml/transform"
+      }
+    }
+  ]
+}

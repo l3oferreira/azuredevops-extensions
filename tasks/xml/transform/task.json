@@ -1,0 +1,55 @@
+﻿{
+  "id": "d27770b4-80c3-4919-845c-21a3c1a6aa4c",
+  "name": "xml-transform",
+  "friendlyName": "XML Transformation",
+  "description": "Transforms configuration files into XML format.",
+  "author": "l3oferreira",
+  "helpMarkDown": "Task to transform configuration files into XML format.",
+  "category": "Utility",
+  "visibility": [
+    "Build"
+  ],
+  "runsOn": [
+    "Agent",
+    "DeploymentGroup"
+  ],
+  "version": {
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "2"
+  },
+  "instanceNameFormat": "XML Transformation: $(transformFile)",
+  "inputs": [
+    {
+      "name": "xmlFile",
+      "type": "filePath",
+      "label": "XML Configuration File",
+      "defaultValue": "Web.config",
+      "required": true,
+      "helpMarkDown": "XML configuration file (usually web.config or app.config)"
+    },
+    {
+      "name": "transformFile",
+      "type": "filePath",
+      "label": "Transformation File",
+      "required": true,
+      "helpMarkDown": "XML transformation file."
+    },
+    {
+      "name": "destinationPath",
+      "type": "filePath",
+      "label": "Destination Path",
+      "required": true,
+      "helpMarkDown": "Path where the transformed configuration file will be stored."
+    }
+  ],
+  "execution": {
+    "PowerShell3": {
+      "target": "xml-transform.ps1",
+      "workingDirectory": "$(currentDirectory)",
+      "platforms": [
+        "windows"
+      ]
+    }
+  }
+}
