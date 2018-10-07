@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "azuredevops-extensions",
   "name": "Azure Devops Extensions",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "publisher": "l3oferreira",
   "targets": [
     {
